@@ -1,5 +1,9 @@
 <div class="page-container">
   <app-header />
 
-  <h1>Games</h1>
+  @if (dates()) {
+    <app-dates [dates]="dates()!" />
+  } @else if (dates()?.length === 0) {
+    <p>None found.</p>
+  }
 </div>
