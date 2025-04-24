@@ -1,4 +1,17 @@
 .header-container {
-	background-color: #eee;
+  align-items: center;
+  display: flex;
+	background-color: #092c5c;
+  color: #fff;
 	padding: 1rem;
+}
+
+.header-logo {
+  width: 50px;
+  vertical-align: top;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  padding-left: 1rem;
 }

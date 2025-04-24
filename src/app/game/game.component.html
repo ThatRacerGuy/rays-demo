@@ -1,3 +1,7 @@
 <li class="game">
-  <span>{{ game().officialDate }}</span>
+  <div class="teams">
+    <div class="team team-away">{{ awayTeam.team.name }}</div>
+    <div class="team-seperator">at</div>
+    <div class="team team-home">{{ homeTeam.team.name }}</div>
+  </div>
 </li>

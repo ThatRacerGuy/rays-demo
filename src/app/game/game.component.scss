@@ -4,3 +4,13 @@
   margin-bottom: 1rem;
   padding: 1rem;
 }
+
+.teams {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team {
+  text-align: center;;
+  width: 50%;
+}

@@ -12,6 +12,10 @@ import { GameComponent } from '../game/game.component';
 })
 export class DatesComponent {
   games: any[] = [];
+  season?: string;
+  wins?: string;
+  losses?: string;
+  teamId = input.required<string>();
   dates = input.required<Date[]>();
 
   ngOnInit() {
@@ -24,5 +28,13 @@ export class DatesComponent {
             this.games.push(game);
           })
       ))
+    if (this.games.length > 0) {
+      console.log(this.games[0]);
+      this.season = this.games[0].seasonDisplay;
+      let homeTeam = this.games[this.games.length - 1].teams.home;
+      let awayTeam = this.games[this.games.length - 1].teams.away;
+      this.wins = homeTeam.team.id == this.teamId ? homeTeam.leagueRecord.wins : awayTeam.leagueRecord.wins;
+      this.losses = homeTeam.team.id == this.teamId ? homeTeam.leagueRecord.losses : awayTeam.leagueRecord.losses;
+    }
   }
 }

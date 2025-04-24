@@ -12,6 +12,7 @@ import { DatesComponent } from './dates/dates.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  teamId = '139';
   dates = signal<Date[] | undefined>(undefined);
   isFetching = signal(false);
   private httpClient = inject(HttpClient);
@@ -20,9 +21,10 @@ export class AppComponent {
   ngOnInit() {
     this.isFetching.set(true);
     const subscription = this.httpClient
-      .get<{ dates: Date[] }>('https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=139&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-12-31')
+      .get<{ dates: Date[] }>('https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=' + this.teamId + '&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-12-31')
       .subscribe({
         next: (responseData) => {
+          console.log(responseData)
           this.dates.set(responseData.dates);
         },
         complete: () => {

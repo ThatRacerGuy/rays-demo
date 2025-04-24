@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { Game } from '../app.model';
+import { Game, Team } from '../app.model';
 
 @Component({
   selector: 'app-game',
@@ -10,4 +10,11 @@ import { Game } from '../app.model';
 })
 export class GameComponent {
   game = input.required<Game>();
+  homeTeam!: Team;
+  awayTeam!: Team;
+
+  ngOnInit() {
+    this.homeTeam = this.game().teams.home;
+    this.awayTeam = this.game().teams.away;
+  }
 }
