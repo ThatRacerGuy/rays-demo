@@ -1,6 +1,11 @@
 # Tampa Bay Rays FE Developer Mini Project - John Jennings
 
+## Web/local viewing
+
+A live version of this app may be viewed at https://johncjennings.com/demos/rays/. It has been built from the code in this repository.
+
 ## Requirements
+From the supplied instructions:
 - Display a list of past Rays games this year, their scores, the starting pitchers, and some of their stats for each game using
 https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=139&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-06-01
 - Please ignore all games in the future
