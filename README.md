@@ -1,8 +1,22 @@
 # Tampa Bay Rays FE Developer Mini Project - John Jennings
 
-## Web/local viewing
-
+## Web/local Viewing
 A live version of this app may be viewed at https://johncjennings.com/demos/rays/. It has been built from the code in this repository.
+
+This app may also be run locally with all of the necessary dependencies below installed:
+- Node.js
+    - This may be installed from instructions found at https://nodejs.org/
+    - The `npm` command line interface (CLI) is also required, but is installed with Node.js
+- The Angular command line interface (CLI) tools
+    - This may be installed on the command line by running `npm install -g @angular/cli`
+Note: Detailed instructions may be found at https://angular.dev/tools/cli/setup-local
+
+Once dependencies are met, the following steps are needed to run the app locally:
+1. Clone this repository to a desktop computer
+2. Run `cd rays-demo` to access the root folder of the repository
+3. Run `npm install` to install the app-specific dependencies found in the `package.json` file
+4. Run `ng serve` to trigger the Angular CLI development server
+    - The script will display the local web link, which is typically http://localhost:4200/ unless that port is in use
 
 ## Requirements
 From the supplied instructions:
@@ -31,8 +45,9 @@ https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=139&hydrate=probablePi
 - The feed does not contain dates with no games, but it is also verified in code to check if a game is present on a date
 - The starting pitcher stats are deep in the JSON output, and in particular the stats for hitting/pitching are assumed in the same order each game
 
-## Other comments
+## Other Comments
 Given more development time, other areas of improvement could include the following:
 - Handling of home/away team data to minimize duplicate variable structure for team data
 - Investigate individual components for game data, such as date, team, and stats
 - Add additional styling to match existing internal Rays web properties
+- Filtering games based on months, day/night, and games with extra innings
