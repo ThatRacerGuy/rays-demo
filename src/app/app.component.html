@@ -1,6 +1,10 @@
 <div class="page-container">
   <app-header />
 
+  @if (isFetching()) {
+    <p>Fetching games...</p>
+  }
+
   @if (dates()) {
     <app-dates [dates]="dates()!" [teamId]="teamId" />
   } @else if (dates()?.length === 0) {

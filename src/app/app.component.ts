@@ -9,7 +9,7 @@ import { DatesComponent } from './dates/dates.component';
   selector: 'app-root',
   imports: [HeaderComponent, DatesComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   teamId = '139';
@@ -21,14 +21,18 @@ export class AppComponent {
   ngOnInit() {
     this.isFetching.set(true);
     const subscription = this.httpClient
-      .get<{ dates: Date[] }>('https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=' + this.teamId + '&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-12-31')
+      .get<{ dates: Date[] }>(
+        'https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=' +
+          this.teamId +
+          '&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-12-31'
+      )
       .subscribe({
         next: (responseData) => {
           this.dates.set(responseData.dates);
         },
         complete: () => {
           this.isFetching.set(false);
-        }
+        },
       });
 
     this.destroyRef.onDestroy(() => {

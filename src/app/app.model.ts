@@ -57,6 +57,7 @@ export interface Stats {
     displayName: string
   }
   stats: {
+    note: string
     summary: string
   }
   type: {
