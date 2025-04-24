@@ -1,7 +1,27 @@
 <li class="game">
   <div class="teams">
-    <div class="team team-away">{{ awayTeam.team.name }}</div>
+    <div class="team team-away" [class.team-win]="awayTeam.isWinner">
+      <span class="team-name">
+        <img
+          [src]="getAwayTeamLogoPath()"
+          alt="{{ awayTeam.team.name }} logo"
+        />
+        <span>{{ awayTeam.team.name }}</span>
+      </span>
+      <span class="team-record">({{ awayTeam.leagueRecord.wins}}-{{ awayTeam.leagueRecord.losses}})</span>
+      <span class="team-score">{{ awayTeam.score }}</span>
+    </div>
     <div class="team-seperator">at</div>
-    <div class="team team-home">{{ homeTeam.team.name }}</div>
+    <div class="team team-home" [class.team-win]="homeTeam.isWinner">
+      <span class="team-name">
+        <img
+          [src]="getHomeTeamLogoPath()"
+          alt="{{ homeTeam.team.name }} logo"
+        />
+        <span>{{ homeTeam.team.name }}</span>
+      </span>
+      <span class="team-record">({{ homeTeam.leagueRecord.wins}}-{{ homeTeam.leagueRecord.losses}})</span>
+      <span class="team-score">{{ homeTeam.score }}</span>
+    </div>
   </div>
 </li>

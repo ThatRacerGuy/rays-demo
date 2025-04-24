@@ -17,4 +17,12 @@ export class GameComponent {
     this.homeTeam = this.game().teams.home;
     this.awayTeam = this.game().teams.away;
   }
+
+  getHomeTeamLogoPath() {
+    return '//www.mlbstatic.com/team-logos/team-cap-on-light/' + this.homeTeam.team.id + '.svg';
+  }
+
+  getAwayTeamLogoPath() {
+    return '//www.mlbstatic.com/team-logos/team-cap-on-light/' + this.awayTeam.team.id + '.svg';
+  }
 }

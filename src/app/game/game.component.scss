@@ -1,11 +1,12 @@
 .game {
-  border: 1px solid #000;
+  border: 1px solid #707070;
   display: block;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
 .teams {
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -13,4 +14,35 @@
 .team {
   text-align: center;;
   width: 50%;
+}
+
+.team-name {
+  display: block;
+
+  img {
+    height: 40px;
+    width: auto;
+    vertical-align: top;
+  }
+
+  span {
+    display: block;
+    margin: 0.5rem 0 0;
+  }
+}
+
+.team-record {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.team-score {
+  display: block;
+  font-size: 2rem;
+  font-weight: 200;
+  margin: 0.5rem 0 0;
+
+  .team-win & {
+    font-weight: 700;
+  }
 }

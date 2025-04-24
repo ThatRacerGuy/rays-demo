@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 
-import { Date, Game } from '../app.model';
+import { Date } from '../app.model';
 import { GameComponent } from '../game/game.component';
 
 @Component({
@@ -12,9 +12,9 @@ import { GameComponent } from '../game/game.component';
 })
 export class DatesComponent {
   games: any[] = [];
-  season?: string;
-  wins?: string;
-  losses?: string;
+  season!: string;
+  wins!: string;
+  losses!: string;
   teamId = input.required<string>();
   dates = input.required<Date[]>();
 
@@ -29,7 +29,6 @@ export class DatesComponent {
           })
       ))
     if (this.games.length > 0) {
-      console.log(this.games[0]);
       this.season = this.games[0].seasonDisplay;
       let homeTeam = this.games[this.games.length - 1].teams.home;
       let awayTeam = this.games[this.games.length - 1].teams.away;
