@@ -15,7 +15,7 @@ Once dependencies are met, the following steps are needed to run the app locally
 1. Clone this repository to a desktop computer
 2. Run `cd rays-demo` to access the root folder of the repository
 3. Run `npm install` to install the app-specific dependencies found in the `package.json` file
-4. Run `ng serve` to trigger the Angular CLI development server
+4. Run `npm run start` to trigger the Angular CLI development server
     - The script will display the local web link, which is typically http://localhost:4200/ unless that port is in use
 
 ## Requirements

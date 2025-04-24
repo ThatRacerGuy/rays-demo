@@ -36,13 +36,13 @@
     <p>
       {{ awayTeam.team.name }} (Away):
       {{ awayPitcher.fullName }} -
-      <strong>{{ awayPitcher.stats[1].stats.note }}</strong>
+      <strong>{{ awayPitcher.stats[1].stats.note || '(ND)' }}</strong>
       {{ awayPitcher.stats[1].stats.summary }}
     </p>
     <p>
       {{ homeTeam.team.name }} (Home):
       {{ homePitcher.fullName }} -
-      <strong>{{ homePitcher.stats[1].stats.note }}</strong>
+      <strong>{{ homePitcher.stats[1].stats.note || '(ND)' }}</strong>
       {{ homePitcher.stats[1].stats.summary }}
     </p>
   </div>
