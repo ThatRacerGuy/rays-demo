@@ -27,9 +27,8 @@ export interface Team {
     losses: number
     pct: string
   }
+  probablePitcher: Pitcher
   score: number
-  seriesNumber: number
-  splitSquad: boolean
   team: {
     id: string
     name: string
@@ -39,4 +38,28 @@ export interface Team {
 export interface Status {
   abstractGameCode: string
   statusCode: string
+}
+
+export interface Pitcher {
+  fullName: string
+  id: string
+  primaryPosition: {
+    abbreviation: string
+    code: string
+    name: string
+    type: string
+  }
+  stats: Stats[]
+}
+
+export interface Stats {
+  group: {
+    displayName: string
+  }
+  stats: {
+    summary: string
+  }
+  type: {
+    displayName: string
+  }
 }

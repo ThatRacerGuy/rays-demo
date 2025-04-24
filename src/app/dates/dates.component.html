@@ -1,8 +1,8 @@
+<h1 class="games-header">{{ season }} Completed Regular Season Games</h1>
+
+<p class="games-record">Record: {{ wins }}-{{ losses }}</p>
+
 <ul class="games">
-  <h1 class="games-header">{{ season }} Completed Regular Season Games</h1>
-
-  <p class="games-record">Record: {{ wins }}-{{ losses }}</p>
-
   @for (game of games; track game.gameGuid) {
     <app-game [game]="game" />
   }

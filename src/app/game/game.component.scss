@@ -6,14 +6,21 @@
 }
 
 .teams {
-  align-items: center;
+  align-items: stretch;
   display: flex;
   justify-content: space-between;
 }
 
 .team {
-  text-align: center;;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   width: 50%;
+}
+
+.team-seperator {
+  align-self: center;
+  padding: 0 1rem;
 }
 
 .team-name {
@@ -34,15 +41,29 @@
 .team-record {
   display: block;
   font-size: 0.875rem;
+  margin: 0 0 0.5rem;
 }
 
 .team-score {
   display: block;
   font-size: 2rem;
   font-weight: 200;
-  margin: 0.5rem 0 0;
+  margin: auto 0 0;
 
   .team-win & {
     font-weight: 700;
+  }
+}
+
+.game-stats {
+  h2 {
+    border-bottom: 1px solid #707070;
+    font-size: 1.25rem;
+    margin: 1.55rem 0 0.75rem;
+    padding: 0 0 0.25rem;
+  }
+
+  p {
+    margin: 0.25rem 0;
   }
 }

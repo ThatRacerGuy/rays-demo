@@ -11,7 +11,9 @@
       <span class="team-record">({{ awayTeam.leagueRecord.wins}}-{{ awayTeam.leagueRecord.losses}})</span>
       <span class="team-score">{{ awayTeam.score }}</span>
     </div>
+
     <div class="team-seperator">at</div>
+
     <div class="team team-home" [class.team-win]="homeTeam.isWinner">
       <span class="team-name">
         <img
@@ -23,5 +25,11 @@
       <span class="team-record">({{ homeTeam.leagueRecord.wins}}-{{ homeTeam.leagueRecord.losses}})</span>
       <span class="team-score">{{ homeTeam.score }}</span>
     </div>
+  </div>
+
+  <div class="game-stats">
+    <h2>Starting Pitching Stats</h2>
+    <p>{{ awayTeam.team.name }} (Away): {{ awayTeam.probablePitcher.fullName }} - {{ awayTeam.probablePitcher.stats[1].stats.summary }}</p>
+    <p>{{ homeTeam.team.name }} (Home): {{ homeTeam.probablePitcher.fullName }} - {{ homeTeam.probablePitcher.stats[1].stats.summary }}</p>
   </div>
 </li>
