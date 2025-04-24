@@ -1,8 +1,39 @@
 .game {
-  border: 1px solid #707070;
+  border: 1px solid #092c5c;
   display: block;
   margin-bottom: 1rem;
   padding: 1rem;
+  position: relative;
+}
+
+.game-date {
+  background-color: #092c5c;
+  color: #fff;
+  display: inline-block;
+  left: -1rem;
+  padding: 0.5rem;
+  position: relative;
+  text-align: center;
+  top: -1rem;
+
+  @media(min-width: 800px) {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  span {
+    display: block;
+  }
+
+  .month {
+    text-transform: uppercase;
+  }
+
+  .day {
+    font-size: 1.25rem;
+  }
 }
 
 .teams {
@@ -57,7 +88,7 @@
 
 .game-stats {
   h2 {
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid #333;
     font-size: 1.25rem;
     margin: 1.55rem 0 0.75rem;
     padding: 0 0 0.25rem;

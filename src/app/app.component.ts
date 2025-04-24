@@ -24,7 +24,7 @@ export class AppComponent {
       .get<{ dates: Date[] }>(
         'https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=' +
           this.teamId +
-          '&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-12-31'
+          '&hydrate=probablePitcher,stats&startDate=2025-03-01&endDate=2025-06-01'
       )
       .subscribe({
         next: (responseData) => {
