@@ -12,6 +12,7 @@ This app may also be run locally with all of the necessary dependencies below in
     - The `npm` command line interface (CLI) is also required, but is installed with Node.js
 - The Angular command line interface (CLI) tools
     - This may be installed on the command line by running `npm install -g @angular/cli`
+
 Note: Detailed instructions may be found at https://angular.dev/tools/cli/setup-local
 
 Once dependencies are met, the following steps are needed to run the app locally:
