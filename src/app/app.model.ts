@@ -8,9 +8,11 @@ export interface Date {
 }
 
 export interface Game {
+  gameDate: string
   gameGuid: string
   gameType: string
   officialDate: string
+  log: string[]
   season: number
   seasonDisplay: string
   status: Status

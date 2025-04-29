@@ -21,6 +21,8 @@ export class DatesComponent {
   ngOnInit() {
     // Feed is presented date-based
     // We need to translate to game-based
+    let gamesLog: string[] = [];
+    let gamesCount = 0;
     this.dates()
       // Check to see if date has a game
       .filter((date: Date) => date.totalGames >= 1)
@@ -33,7 +35,15 @@ export class DatesComponent {
               game.gameType === 'R' && game.status.statusCode === 'F'
           )
           .map((game: Game) => {
+            gamesCount++;
             // Add all games to tracking array
+            if ((game.teams.home.team.id == this.teamId() && game.teams.home.isWinner) || (game.teams.away.team.id == this.teamId() && game.teams.away.isWinner)) {
+              gamesLog.push('W');
+            } else {
+              gamesLog.push('L');
+            }
+            // Add game result to the tracking game log
+            game.log = gamesLog.slice(0, gamesCount);
             this.games.push(game);
           })
       );

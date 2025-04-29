@@ -29,19 +29,31 @@ export class GameComponent {
   awayTeam!: Team;
   homePitcher!: Pitcher;
   awayPitcher!: Pitcher;
-  date!: string;
   month!: string;
-  day!: number;
+  day!: string;
+  streak!: string;
 
   ngOnInit() {
     this.homeTeam = this.game().teams.home;
     this.awayTeam = this.game().teams.away;
     this.homePitcher = this.homeTeam.probablePitcher;
     this.awayPitcher = this.awayTeam.probablePitcher;
-    this.date = this.game().officialDate;
-    let dateCalc = new Date(this.date);
-    this.month = monthNames[dateCalc.getMonth()];
-    this.day = dateCalc.getDate();
+    let date = this.game().officialDate.split('-');
+    this.month = monthNames[parseInt(date[1]) - 1];
+    this.day = date[2];
+
+    let reverseLog = this.game().log.reverse();
+    let streakCount = 1;
+    for (let index = 0; index < reverseLog.length; index++) {
+      if (reverseLog[index] === reverseLog[index + 1]) {
+        streakCount++;
+        this.streak = streakCount + ' games in a row';
+      } else {
+        break;
+      }
+    }
+    this.streak = this.streak || '1 game in a row';
+    this.streak = reverseLog[0] === 'W' ? 'Won ' + this.streak : 'Lost ' + this.streak;
   }
 
   getHomeTeamLogoPath() {
